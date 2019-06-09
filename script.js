@@ -22,24 +22,31 @@ function getFoodInfo() {
 
 function displayResults(test) {
   console.log(test);
+  const dataInfo = test.list.item.map(item => {
+    return Object.values(item);
+  })
+
+  table.clear();
+  table.rows.add(dataInfo);
+  table.draw();
+}
+
+let table = null;
 
   // Now just display the array in that JSON object using DataTable's api
 
   $('#myTable').DataTable( {
-        data: test.list.item,
+        data: null,
         columns: [
-            { name: "Name" },
-            { name: "Position" },
-            { name: "Office" },
-            { name: "Extn." },
-            { name: "Start date" },
-            { name: "Salary" }
+            { title: "group" },
+            { title: "name" },
+            { title: "manu" },
         ]
     } );
+    getFoodInfo();
 }
 
 $(document).ready(function () {
-  getFoodInfo();
+    getFoodInfo();
 });
-
 
