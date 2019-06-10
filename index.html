@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Food Information</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="ApiHack.css" rel="stylesheet" type="text/css" />
     <link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='css' />
-    <script type="text/javascript" src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script type="javascript" src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
@@ -15,15 +15,26 @@
 
     <form class="js-form">
       <label>Enter the food you would like to search:</label>
-      <input placeholder="ex. fries" type="text">
-      <input type="submit" value="Search">
+      <input id='foodSearchInput' placeholder="ex. fries" type="text">
+      <input id='searchButton' type="submit" value="Search">
     </form>
     <div class='tableDiv'>
-      <table id='myTable'></table>
+      <table id='myTable'>
+        <thead>
+          <tr>
+            <th>List</th>
+            <th>Group</th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th>Manufacture</th>
+          </tr>
+        </thead>
+      </table>
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="ApiHack.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 
