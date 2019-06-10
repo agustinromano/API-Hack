@@ -35,18 +35,18 @@ let table = null;
 
   // Now just display the array in that JSON object using DataTable's api
 
-  $('#myTable').DataTable( {
-        data: null,
-        columns: [
-            { title: "group" },
-            { title: "name" },
-            { title: "manu" },
-        ]
-    } );
-    getFoodInfo();
-}
-
 $(document).ready(function () {
-    getFoodInfo();
+  table = $('#myTable').DataTable({
+    data : null,
+    colums : [
+      { title: "offset"},
+      { title: "group" },
+      { title: "name" },
+      { title: "ndbno" },
+      { title: "ds"},
+      { title: "manu" }
+    ]
+  })
+  getFoodInfo();
 });
 
