@@ -9,6 +9,7 @@ function getFoodInfo() {
 
     const apiKey = 'RwF2lQB673HZPRaw9tmfa7arFAiPTb8e3Q1FSMh5';
     const url = `https://api.nal.usda.gov/ndb/search/?format=json&q=${input}&sort=n&max=25&offset=0&api_key=${apiKey} `;
+    const urlOther = `http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=${apiKey}&nutrients=205&nutrients=204&nutrients=208&nutrients=269`;
 
     console.log(url);
 
@@ -38,15 +39,31 @@ let table = null;
 $(document).ready(function () {
   table = $('#myTable').DataTable({
     data : null,
+    columnDefs: [
+      {
+          targets:2,
+          render: function ( data, type, row, meta ) {
+              if(type === 'display'){
+                  data = '<a href="basic.php?game=' + encodeURIComponent(data) + '">' + data + '</a>';
+              }
+
+              return data;
+          }
+      }
+  ],
+
     colums : [
       { title: "offset"},
-      { title: "group" },
-      { title: "name" },
-      { title: "ndbno" },
-      { title: "ds"},
+      { title: "group"},
+      { title: "name"},
+      // { title: "ndbno" },
+      // { title: "ds"},
       { title: "manu" }
     ]
   })
   getFoodInfo();
 });
 
+// function getNutrientInfo() {
+  
+// }
