@@ -1,5 +1,19 @@
 'use strict'
 
+$(document).ready(function () {
+    table = $('#newTable').DataTable({
+      data : null,
+      colums : [
+        { title: "ndbno"},
+        { title: "name"},
+        { title: "weight"},
+        { title: "measure" },
+        { title: "nutrients"},
+      ]
+    })
+    getNutrientInfo();
+  });
+
 const urlParams = new URLSearchParams(window.location.search);
 const nbno = urlParams.get('nbno');
 
@@ -25,18 +39,3 @@ function displayNutrients(results) {
 };
   
   let table = null;
-
-$(document).ready(function () {
-    table = $('#newTable').DataTable({
-      data : null,
-      colums : [
-        { title: "ndbno"},
-        { title: "name"},
-        { title: "weight"},
-        { title: "measure" },
-        { title: "nutrients"},
-      ]
-    })
-    getNutrientInfo();
-  });
-  
