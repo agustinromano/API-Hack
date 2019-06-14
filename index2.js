@@ -39,3 +39,4 @@ function displayNutrients(results) {
 };
   
   let table = null;
+  
